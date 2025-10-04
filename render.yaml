@@ -1,0 +1,21 @@
+version: "1"
+
+envVarGroups:
+  - name: Greeter Environment Group
+    envVars:
+      - key: BPL_JVM_THREAD_COUNT
+        value: 50
+      - key: JAVA_TOOL_OPTIONS
+        value: -Xss512k -XX:ReservedCodeCacheSize=128M -XX:MaxMetaspaceSize=64M
+
+services:
+  - type: web
+    name: Greeter
+    runtime: image
+    image:
+      url: ghcr.io/suomarte/greeter:latest
+    plan: free
+    envVars:
+      - fromGroup: Greeter Environment Group
+    region: frankfurt
+    autoDeployTrigger: commit
