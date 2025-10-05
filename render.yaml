@@ -9,8 +9,8 @@ envVarGroups:
         value: -Xss512k -XX:ReservedCodeCacheSize=128M -XX:MaxMetaspaceSize=64M
 
 services:
-  - type: web
-    name: Greeter
+  - type: pserv
+    name: Greeter Backend
     runtime: image
     image:
       url: ghcr.io/suomarte/greeter:latest
