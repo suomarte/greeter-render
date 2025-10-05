@@ -2,7 +2,7 @@ version: "1"
 
 services:
   - name: Greeter Backend
-    type: web
+    type: pserv
     runtime: image
     image:
       url: ghcr.io/suomarte/greeter:latest
